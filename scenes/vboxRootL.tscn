@@ -351,10 +351,10 @@ margin_right = 289.0
 margin_right = 253.0
 
 [node name="lifebar" parent="stats/marginContainer/vbox/vboxBars/hpBox/vbox" index="0"]
-margin_right = 179.0
+margin_right = 144.0
 
 [node name="strLife" parent="stats/marginContainer/vbox/vboxBars/hpBox/vbox" index="1"]
-margin_right = 179.0
+margin_right = 144.0
 
 [node name="info" type="TextureRect" parent="stats/marginContainer/vbox/vboxBars/hpBox" index="3"]
 margin_left = 257.0
@@ -381,10 +381,10 @@ margin_right = 289.0
 margin_right = 253.0
 
 [node name="foodBar" parent="stats/marginContainer/vbox/vboxBars/foodBox/vbox" index="0"]
-margin_right = 186.0
+margin_right = 177.0
 
 [node name="strFood" parent="stats/marginContainer/vbox/vboxBars/foodBox/vbox" index="1"]
-margin_right = 186.0
+margin_right = 177.0
 
 [node name="info" type="TextureRect" parent="stats/marginContainer/vbox/vboxBars/foodBox" index="3"]
 margin_left = 257.0
@@ -557,7 +557,7 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="intContainer" type="MarginContainer" parent="perks/vbox/vboxStats/strPanel/marginCtn/strHbox"]
-margin_right = 55.0
+margin_right = 105.0
 margin_bottom = 103.0
 mouse_filter = 1
 size_flags_horizontal = 0
@@ -565,9 +565,9 @@ size_flags_stretch_ratio = 2.0
 custom_constants/margin_left = 0
 
 [node name="points" type="Label" parent="perks/vbox/vboxStats/strPanel/marginCtn/strHbox/intContainer"]
-margin_top = 40.0
-margin_right = 55.0
-margin_bottom = 62.0
+margin_top = 30.0
+margin_right = 105.0
+margin_bottom = 72.0
 mouse_filter = 1
 size_flags_horizontal = 3
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -582,7 +582,7 @@ script = SubResource( 8 )
 
 [node name="vSeparator" type="VSeparator" parent="perks/vbox/vboxStats/strPanel/marginCtn/strHbox"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 59.0
+margin_left = 109.0
 margin_right = 141.0
 margin_bottom = 3.0
 mouse_filter = 1
@@ -678,16 +678,16 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="intContainer" type="PanelContainer" parent="perks/vbox/vboxStats/defPanel/marginCtn/defHbox"]
-margin_right = 55.0
+margin_right = 105.0
 margin_bottom = 103.0
 mouse_filter = 1
 size_flags_stretch_ratio = 2.0
 custom_styles/panel = SubResource( 12 )
 
 [node name="points" type="Label" parent="perks/vbox/vboxStats/defPanel/marginCtn/defHbox/intContainer"]
-margin_top = 40.0
-margin_right = 55.0
-margin_bottom = 62.0
+margin_top = 30.0
+margin_right = 105.0
+margin_bottom = 72.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -703,7 +703,7 @@ script = SubResource( 13 )
 
 [node name="vSeparator" type="VSeparator" parent="perks/vbox/vboxStats/defPanel/marginCtn/defHbox"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 59.0
+margin_left = 109.0
 margin_right = 141.0
 margin_bottom = 3.0
 mouse_filter = 1
@@ -796,7 +796,7 @@ margin_bottom = 103.0
 alignment = 1
 
 [node name="intContainer" type="PanelContainer" parent="perks/vbox/vboxStats/spdPanel/marginCtn/spdHbox"]
-margin_right = 55.0
+margin_right = 105.0
 margin_bottom = 103.0
 mouse_filter = 1
 size_flags_horizontal = 0
@@ -805,9 +805,9 @@ size_flags_stretch_ratio = 2.0
 custom_styles/panel = SubResource( 12 )
 
 [node name="points" type="Label" parent="perks/vbox/vboxStats/spdPanel/marginCtn/spdHbox/intContainer"]
-margin_top = 40.0
-margin_right = 55.0
-margin_bottom = 62.0
+margin_top = 30.0
+margin_right = 105.0
+margin_bottom = 72.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 6
@@ -823,7 +823,7 @@ script = SubResource( 17 )
 
 [node name="vSeparator" type="VSeparator" parent="perks/vbox/vboxStats/spdPanel/marginCtn/spdHbox"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 59.0
+margin_left = 109.0
 margin_right = 141.0
 margin_bottom = 3.0
 mouse_filter = 1

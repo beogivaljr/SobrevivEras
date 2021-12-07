@@ -215,7 +215,7 @@ script = ExtResource( 14 )
 [node name="twn" type="Tween" parent="marginContainer/vbox/vboxBars/hpBox"]
 
 [node name="strHp" type="Label" parent="marginContainer/vbox/vboxBars/hpBox"]
-margin_right = 98.0
+margin_right = 105.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 60, 0 )
 size_flags_horizontal = 3
@@ -229,14 +229,14 @@ align = 1
 valign = 1
 
 [node name="vbox" type="VBoxContainer" parent="marginContainer/vbox/vboxBars/hpBox"]
-margin_left = 102.0
+margin_left = 109.0
 margin_right = 157.0
 margin_bottom = 46.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="lifebar" type="TextureProgress" parent="marginContainer/vbox/vboxBars/hpBox/vbox"]
-margin_right = 55.0
+margin_right = 48.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
@@ -281,7 +281,7 @@ __meta__ = {
 
 [node name="strLife" type="Label" parent="marginContainer/vbox/vboxBars/hpBox/vbox"]
 margin_top = 29.0
-margin_right = 55.0
+margin_right = 48.0
 margin_bottom = 46.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
@@ -309,7 +309,7 @@ script = ExtResource( 15 )
 [node name="twn" type="Tween" parent="marginContainer/vbox/vboxBars/foodBox"]
 
 [node name="strFood" type="Label" parent="marginContainer/vbox/vboxBars/foodBox"]
-margin_right = 88.0
+margin_right = 72.0
 margin_bottom = 28.0
 rect_min_size = Vector2( 60, 0 )
 size_flags_horizontal = 3
@@ -325,14 +325,14 @@ __meta__ = {
 }
 
 [node name="vbox" type="VBoxContainer" parent="marginContainer/vbox/vboxBars/foodBox"]
-margin_left = 92.0
+margin_left = 76.0
 margin_right = 157.0
 margin_bottom = 46.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="foodBar" type="TextureProgress" parent="marginContainer/vbox/vboxBars/foodBox/vbox"]
-margin_right = 65.0
+margin_right = 81.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
 size_flags_horizontal = 3
@@ -376,7 +376,7 @@ __meta__ = {
 
 [node name="strFood" type="Label" parent="marginContainer/vbox/vboxBars/foodBox/vbox"]
 margin_top = 29.0
-margin_right = 65.0
+margin_right = 81.0
 margin_bottom = 46.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
