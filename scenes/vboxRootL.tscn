@@ -47,15 +47,15 @@ func _process(_delta):self.texture=global.getBgTexture()
 script/source = "extends RichTextLabel
 var waveAmp:=50.0
 const maxWaveAmp:=50.0
-var stringNormal=\"[center]Stat points \\nleft[/center]\"
-var stringWavy=\"[center][wave amp=50 freq=5]Stat points \\nleft[/wave][/center]\"
+var stringNormal=\"[center]Melhorias \\nrestantes[/center]\"
+var stringWavy=\"[center][wave amp=50 freq=5]Melhorias \\nrestantes[/wave][/center]\"
 var stringWavySlowed
 var slowing=false
 func _ready():
 	self.bbcode_text=stringWavy
 	set_process(true)
 func _process(_delta):
-	stringWavy=\"[center][wave amp=\"+str(waveAmp)+\"freq=5]Stat points \\nleft[/wave][/center]\"
+	stringWavy=\"[center][wave amp=\"+str(waveAmp)+\"freq=5]Melhorias \\nrestantes[/wave][/center]\"
 	waveAmp=lerp(waveAmp,0.0 if slowing else maxWaveAmp,0.1 if slowing else 1.0)
 	if global.player.pointsLeft==0:
 		slowing=true
@@ -351,10 +351,10 @@ margin_right = 289.0
 margin_right = 253.0
 
 [node name="lifebar" parent="stats/marginContainer/vbox/vboxBars/hpBox/vbox" index="0"]
-margin_right = 189.0
+margin_right = 151.0
 
 [node name="strLife" parent="stats/marginContainer/vbox/vboxBars/hpBox/vbox" index="1"]
-margin_right = 189.0
+margin_right = 151.0
 
 [node name="info" type="TextureRect" parent="stats/marginContainer/vbox/vboxBars/hpBox" index="3"]
 margin_left = 257.0
@@ -381,10 +381,10 @@ margin_right = 289.0
 margin_right = 253.0
 
 [node name="foodBar" parent="stats/marginContainer/vbox/vboxBars/foodBox/vbox" index="0"]
-margin_right = 189.0
+margin_right = 161.0
 
 [node name="strFood" parent="stats/marginContainer/vbox/vboxBars/foodBox/vbox" index="1"]
-margin_right = 189.0
+margin_right = 161.0
 
 [node name="info" type="TextureRect" parent="stats/marginContainer/vbox/vboxBars/foodBox" index="3"]
 margin_left = 257.0
@@ -471,16 +471,16 @@ rect_clip_content = false
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
 custom_constants/shadow_as_outline = 1
+custom_fonts/normal_font = ExtResource( 4 )
 bbcode_enabled = true
-bbcode_text = "[center][wave amp=50 freq=5]Stat points
-left[/wave][/center]"
-text = "Stat points
-left"
+bbcode_text = "[center][wave amp=50 freq=5]Melhorias
+restantes[/wave][/center]"
+text = "Melhorias
+restantes"
 scroll_active = false
 script = SubResource( 3 )
 
@@ -570,11 +570,11 @@ margin_right = 105.0
 margin_bottom = 72.0
 mouse_filter = 1
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 7 )
 text = "00+00"
 align = 1
 valign = 1
@@ -691,11 +691,11 @@ margin_bottom = 72.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 7 )
 text = "00+00"
 align = 1
 valign = 1
@@ -811,11 +811,11 @@ margin_bottom = 72.0
 mouse_filter = 1
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 2
 custom_constants/shadow_offset_y = 2
 custom_constants/shadow_as_outline = 1
+custom_fonts/font = ExtResource( 7 )
 text = "00+00"
 align = 1
 valign = 1

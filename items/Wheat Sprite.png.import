@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Fight_Buttom_Normal.png-8777fad4a674e09c1a7e8e7451313721.stex"
+path="res://.import/Wheat Sprite.png-48fe925fd82d0aa25833e60e57df0d41.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resource/Fight_Buttom_Normal.png"
-dest_files=[ "res://.import/Fight_Buttom_Normal.png-8777fad4a674e09c1a7e8e7451313721.stex" ]
+source_file="res://items/Wheat Sprite.png"
+dest_files=[ "res://.import/Wheat Sprite.png-48fe925fd82d0aa25833e60e57df0d41.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
