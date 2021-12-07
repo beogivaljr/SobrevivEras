@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/truck.png-da96248a8080c6f7638ca69c02e6b867.stex"
+path="res://.import/farm.png-07fff00cbd360692ce30dfcc4ff3cd3f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/truck.png"
-dest_files=[ "res://.import/truck.png-da96248a8080c6f7638ca69c02e6b867.stex" ]
+source_file="res://custom_assets/items/farm.png"
+dest_files=[ "res://.import/farm.png-07fff00cbd360692ce30dfcc4ff3cd3f.stex" ]
 
 [params]
 

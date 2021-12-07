@@ -85,8 +85,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -7.0
 margin_top = -10.0
-margin_right = 7353.0
-margin_bottom = 4382.0
+margin_right = 8377.0
+margin_bottom = 4982.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 2
@@ -108,7 +108,7 @@ __meta__ = {
 
 [node name="strMuteInfo" type="Label" parent="marginContainer2"]
 margin_left = 20.0
-margin_top = 552.0
+margin_top = 553.0
 margin_right = 1004.0
 margin_bottom = 580.0
 size_flags_vertical = 8
@@ -123,7 +123,7 @@ __meta__ = {
 
 [node name="strVersion" type="Label" parent="marginContainer2"]
 margin_left = 20.0
-margin_top = 552.0
+margin_top = 553.0
 margin_right = 1004.0
 margin_bottom = 580.0
 size_flags_vertical = 8

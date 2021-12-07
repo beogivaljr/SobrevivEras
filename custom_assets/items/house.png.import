@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wheat Sprite.png-48fe925fd82d0aa25833e60e57df0d41.stex"
+path="res://.import/house.png-b044fe72700aef4362e295d1405a2f7c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/Wheat Sprite.png"
-dest_files=[ "res://.import/Wheat Sprite.png-48fe925fd82d0aa25833e60e57df0d41.stex" ]
+source_file="res://custom_assets/items/house.png"
+dest_files=[ "res://.import/house.png-b044fe72700aef4362e295d1405a2f7c.stex" ]
 
 [params]
 

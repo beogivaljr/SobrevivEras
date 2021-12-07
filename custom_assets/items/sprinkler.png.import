@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/farm.png-e4087a0f6c8d5085ca06ca3c1cd20f56.stex"
+path="res://.import/sprinkler.png-899b33990de4a88cc2577c90d881b0d6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/farm.png"
-dest_files=[ "res://.import/farm.png-e4087a0f6c8d5085ca06ca3c1cd20f56.stex" ]
+source_file="res://custom_assets/items/sprinkler.png"
+dest_files=[ "res://.import/sprinkler.png-899b33990de4a88cc2577c90d881b0d6.stex" ]
 
 [params]
 

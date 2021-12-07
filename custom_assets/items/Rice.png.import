@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/adubo.png-7b089b1889890a7d1e15c144bd26a540.stex"
+path="res://.import/Rice.png-1039194f7293274c66c765c5fd651624.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/adubo.png"
-dest_files=[ "res://.import/adubo.png-7b089b1889890a7d1e15c144bd26a540.stex" ]
+source_file="res://custom_assets/items/Rice.png"
+dest_files=[ "res://.import/Rice.png-1039194f7293274c66c765c5fd651624.stex" ]
 
 [params]
 
