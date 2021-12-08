@@ -20,7 +20,9 @@ func _ready():
 		$marginContainer/vbox/vboxBars/foodBox/vbox/strFood.bIsPlayerStats=true
 		$marginContainer/vbox/strSkill.bIsPlayerStats=true
 	
-	if checkVisibility:var _s1=get_tree().root.connect("size_changed",global,"shouldIBeInvisible",[self])
+	if checkVisibility:
+		var _s1=get_tree().root.connect("size_changed",global,"shouldIBeInvisible",[self])
+	
 	var _s2=$twnOffset.connect("tween_completed",self,"resetProcess")
 	defaultPos=$marginContainer/vbox/vboxBars/hpBox.rect_position
 	set_process(false)

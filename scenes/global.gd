@@ -86,8 +86,8 @@ const pigeonDict={
 	Classes.Fridgeon:
 		{"sprite":"res://resource/sprites/Fridgeon.png",
 		"portrait":"res://resource/portraits/Fridgeon_Port.png",
-		'skill':'The cold shoulder',
-		'skillDescription':'Its insides are also cold as ice'
+		'skill':'Super plantas',
+		'skillDescription':'Essas plantas se alimentam de QUALQUER COISA!'
 	},
 	Classes.GodPigeon:
 		{"sprite":"res://resource/sprites/God_Pigeon_Mirrored.png",
@@ -104,8 +104,8 @@ const pigeonDict={
 	Classes.Hatoshi:
 		{"sprite":"res://resource/sprites/Hatoshi.png",
 		"portrait":"res://resource/portraits/Hatoshi_Port.png",
-		'skill':'Ancient arts',
-		'skillDescription':'While other ate crumbs, this one trained the blade'
+		'skill':'Frota de naves',
+		'skillDescription':'Quem precisa de rodas?!'
 		#'skillDescription':'Better not be in the path of its blade'
 	},
 	Classes.Infiltrator:
@@ -188,8 +188,8 @@ const pigeonDict={
 	Classes.Wyrm:
 		{"sprite":"res://resource/sprites/Wrym_Pigeon.png",
 		"portrait":"res://resource/portraits/Wrym_Pigeon_Port.png",
-		'skill':'Mythical dragon creature',
-		'skillDescription':'Dragons are actually quite small'
+		'skill':'Colonia marciana com solo top',
+		'skillDescription':'\"Em se plantando tudo dá\"'
 	},
 	Classes.Platy:
 		{"sprite":"res://resource/sprites/Platypigeon.png",

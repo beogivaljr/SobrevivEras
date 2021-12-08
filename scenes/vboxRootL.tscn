@@ -347,12 +347,7 @@ margin_right = 289.0
 [node name="hpBox" parent="stats/marginContainer/vbox/vboxBars" index="0"]
 margin_right = 289.0
 
-[node name="strHp" parent="stats/marginContainer/vbox/vboxBars/hpBox" index="1"]
-margin_right = 90.0
-margin_bottom = 27.0
-
 [node name="vbox" parent="stats/marginContainer/vbox/vboxBars/hpBox" index="2"]
-margin_left = 94.0
 margin_right = 253.0
 
 [node name="lifebar" parent="stats/marginContainer/vbox/vboxBars/hpBox/vbox" index="0"]
@@ -383,12 +378,7 @@ __meta__ = {
 [node name="foodBox" parent="stats/marginContainer/vbox/vboxBars" index="1"]
 margin_right = 289.0
 
-[node name="strFood" parent="stats/marginContainer/vbox/vboxBars/foodBox" index="1"]
-margin_right = 62.0
-margin_bottom = 27.0
-
 [node name="vbox" parent="stats/marginContainer/vbox/vboxBars/foodBox" index="2"]
-margin_left = 66.0
 margin_right = 253.0
 
 [node name="foodBar" parent="stats/marginContainer/vbox/vboxBars/foodBox/vbox" index="0"]

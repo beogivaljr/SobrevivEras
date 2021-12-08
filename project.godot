@@ -14,8 +14,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Pigeon Ascent"
-config/description="Take care of your own pigeon as they fight increasingly stronger foes"
+config/name="SobreviVeras"
+config/description="Cuide de sua cidade e vença todas as inpempéries do aquecimento global."
 run/main_scene="res://scenes/intro.tscn"
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.png"

@@ -105,19 +105,19 @@ func _process(delta):
 				global.player.gold+=goldToWin
 				global.incrementLevel()
 				global.player.pointsLeft+=3
-				registerSameTurn("")
-				registerSameTurn("[center][wave amp=100 freq=5]\n"+global.player.name + " won! [/wave][/center]\n")
-				registerSameTurn("")
-				registerSameTurn("[center]You got [color=#ffe478][u]" + String(goldToWin) + "[/u][/color] gold.[/center]")#
+				registerSameTurn(false, "")
+				registerSameTurn(false, "[center][wave amp=100 freq=5]\n"+global.player.name + " sobreviveu! [/wave][/center]\n")
+				registerSameTurn(false, "")
+				registerSameTurn(false, "[center]Sua cidade acumulou [color=#ffe478][u]" + String(goldToWin) + "[/u][/color] de ouro.[/center]")#
 				ended=true
 				exitButton.modulate.a=0
 				exitButton.visible=true
 				resetButton.visible=false
 			else:
 				global.fadeMusicAway()
-				registerSameTurn("[center][shake rate=15 level=10]\n"+global.enemy.name + " won... [/shake][/center]\n")
-				registerSameTurn("[center][color=#b0305c]" + "Game Over." + "[/color][/center]\n\n")
-				registerSameTurn("[center] Retry? [/center]")
+				registerSameTurn(false, "[center][shake rate=15 level=10]\n"+global.enemy.name + " destruiu sua cidade... [/shake][/center]\n")
+				registerSameTurn(false, "[center][color=#b0305c]" + "Fim de jogo." + "[/color][/center]\n\n")
+				registerSameTurn(false, "[center] Tentar novamente? [/center]")
 				ended=true
 				resetButton.modulate.a=0
 				resetButton.visible=true
@@ -127,6 +127,7 @@ func _process(delta):
 			resetButton.modulate.a=1
 
 func attack(myself=global.player,target=global.enemy,_sprMyself=playerSpr,sprTarget=enemySpr):
+	var is_city = myself.name == global.player.name
 	var block=(1-(global.scaling.defenseBlock*target.defense/global.limits.defense)) # Is a value between 0.5 and 1
 	var damage=calculateDamage(myself.strength+myself.extraStrength,target.defense)
 	damage=max(ceil(damage*block),1)
@@ -183,7 +184,7 @@ func attack(myself=global.player,target=global.enemy,_sprMyself=playerSpr,sprTar
 			self.iEnemyHpLoss+=1
 			iMyselfHpLoss=self.iEnemyHpLoss
 	if iMyselfHpLoss>=1:
-		registerSameTurn("\n\n" + bbName + " takes " + str(iMyselfHpLoss) + " damage from being hungry...", Color.yellow)
+		registerSameTurn(is_city, "\n\n" + bbName + " takes " + str(iMyselfHpLoss) + " damage from being hungry...", Color.yellow)
 		myself.hp-=int(iMyselfHpLoss)
 		if myself.hp<=0:
 			exitButton.rect_global_position.y=OS.window_size.y*1.2
@@ -193,37 +194,39 @@ func attack(myself=global.player,target=global.enemy,_sprMyself=playerSpr,sprTar
 	
 	# Finally, attack stuff
 	if dodged:
-		createDamageNumbers(enemySpr.global_position,1,"Miss",false,strOrigin)
-		register(bbName + " misses an attack!")
+		createDamageNumbers(enemySpr.global_position,1,"Miss", is_city, false,strOrigin)
+		register(is_city, bbName + " misses an attack!")
 	else:
 		if bIsCritical:
 			damage = max(int(2*damage),1)
-			registerFast("[shake rate=20 level=10]A CRITICAL HIT![/shake]", Color.green if strOrigin=="Player" else Color.red)
+			registerFast(is_city, "[shake rate=20 level=10]A CRITICAL HIT![/shake]", Color.green if strOrigin=="Player" else Color.red)
 			if foodDamage>0:
-				registerSameTurnNoLineBreak(bbName + " attacks for " +String(damage)+ " damage")
-				registerSameTurn("and " +String(foodDamage)+ " food damage")
-				turn+=1
+				registerSameTurnNoLineBreak(is_city, bbName + " attacks for " +String(damage)+ " damage")
+				registerSameTurn(is_city, "and " +String(foodDamage)+ " food damage")
+				if not is_city:
+					turn+=1
 			else:
-				registerSameTurn(bbName + " attacks for " +String(damage)+ " damage")
-				turn+=1
+				registerSameTurn(is_city, bbName + " attacks for " +String(damage)+ " damage")
+				if not is_city:
+					turn+=1
 			shakeHpBar(strOrigin)
 			sprTarget.hit()
 		else:
 			#damage*=1.0 if myself.energy>0 else 0.5
 			#damage = int(max(damage*damageModifier,1))
 			damage = max(int(damage),1)
-			register(bbName + " attacks for " +String(damage)+ " damage")
-			if foodDamage>0:registerSameTurnNoLineBreak("and " +String(foodDamage)+ " food damage")
+			register(is_city, bbName + " attacks for " +String(damage)+ " damage")
+			if foodDamage>0:registerSameTurnNoLineBreak(is_city, "and " +String(foodDamage)+ " food damage")
 			shakeHpBar(strOrigin)
 			sprTarget.hit()
 			
 		if doubleStrike:
 			target.hp-=int(damage*0.66)
-			createDamageNumbers(sprTarget.global_position+Vector2(16,-16),1,damage/2,isCritical,strOrigin)
-			registerSameTurn("and also attacks again for "+str(int(damage/2))+" damage!")
+			createDamageNumbers(sprTarget.global_position+Vector2(16,-16),1,damage/2, is_city, isCritical,strOrigin)
+			registerSameTurn(is_city, "and also attacks again for "+str(int(damage/2))+" damage!")
 		target.hp-=int(damage)
 		target.energy-=int(foodDamage)
-		createDamageNumbers(sprTarget.global_position,1 if strOrigin=='Player' else -1,damage,isCritical,strOrigin)
+		createDamageNumbers(sprTarget.global_position, 1 if strOrigin=='Player' else -1, damage, is_city, isCritical,strOrigin)
 		if target.hp<=0:
 			exitButton.rect_global_position.y=OS.window_size.y*1.2
 			fighting=false
@@ -235,24 +238,34 @@ func attack(myself=global.player,target=global.enemy,_sprMyself=playerSpr,sprTar
 			return
 
 # Messages
-func register(string,color:=Color.white):
+func register(is_city, string,color:=Color.white):
+	if is_city:
+		return
 	var message= "\n\n#"+String(turn)+"> " + "[color=#" + color.to_html(false) + "]"+string+"[/color]"
 	battleLogText.appendMessage(message)
 	turn+=1
 
-func registerFast(string,color:=Color.white):
+func registerFast(is_city, string,color:=Color.white):
+	if is_city:
+		return
 	var message="\n\n#"+String(turn)+"> "+"[color=#" + color.to_html(false) + "]"+string+"[/color]"
 	battleLogText.appendMessage(message)
 
-func registerWithoutLineEnd(string,color:=Color.white):
+func registerWithoutLineEnd(is_city, string,color:=Color.white):
+	if is_city:
+		return
 	var message="\n\n#"+String(turn)+"> "+"[color=#" + color.to_html(false) + "]"+string+"[/color]"
 	battleLogText.appendMessage(message)
 
-func registerSameTurn(string,color:=Color.white):
+func registerSameTurn(is_city, string,color:=Color.white):
+	if is_city:
+		return
 	var message= " [color=#" + color.to_html(false) + "]"+string+"[/color]"
 	battleLogText.appendMessage(message)
 	
-func registerSameTurnNoLineBreak(string,color:=Color.white):
+func registerSameTurnNoLineBreak(is_city, string,color:=Color.white):
+	if is_city:
+		return
 	var message= " [color=#" + color.to_html(false) + "]"+string+"[/color]"
 	battleLogText.appendMessage(message)
 
@@ -318,7 +331,9 @@ func exitBattle():
 	$twnColorRectTransparency.start()
 func applyDamage(target,damage):target.hp-=damage
 func killMe(_h,_m):self.queue_free()
-func createDamageNumbers(position,direction,damage,critical=false,origin=""):
+func createDamageNumbers(position,direction,damage, is_city: bool,critical=false,origin=""):
+	if is_city:
+		return
 	var i=damageNumbers.instance()
 	i.global_position=position
 	i.direction=direction
@@ -350,7 +365,7 @@ func knockback():
 func particlesAndWindowshake(area):
 	createHitSfx()
 	particles(area)
-	windowShake(16)
+#	windowShake(16)
 func createHitSfx():self.add_child(hitSfx.instance())
 func particles(_area:Area2D):
 	var i=particlesImpact.instance()

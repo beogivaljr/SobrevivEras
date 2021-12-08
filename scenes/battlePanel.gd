@@ -1,11 +1,6 @@
 extends PanelContainer
 
-
 func _ready():
-	var _v1=global.connect("PlayerEvolved",self,'changeTexture')
-
-
-func changeTexture():
 	if (
 		global.player["class"] == global.Classes.Whey
 		or global.player["class"] == global.Classes.Crusader
