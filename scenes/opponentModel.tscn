@@ -132,7 +132,7 @@ modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 586.0
-margin_bottom = 89.0
+margin_bottom = 99.0
 mouse_filter = 2
 texture = ExtResource( 6 )
 expand = true
@@ -142,7 +142,7 @@ stretch_mode = 2
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 586.0
-margin_bottom = 89.0
+margin_bottom = 99.0
 mouse_filter = 1
 custom_constants/margin_right = 8
 custom_constants/margin_top = 5
@@ -153,11 +153,11 @@ custom_constants/margin_bottom = 5
 margin_left = 8.0
 margin_top = 5.0
 margin_right = 574.0
-margin_bottom = 80.0
+margin_bottom = 90.0
 
 [node name="icon" type="TextureRect" parent="marginContainer/hboxEnemy"]
 margin_right = 93.0
-margin_bottom = 75.0
+margin_bottom = 85.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -169,7 +169,7 @@ stretch_mode = 6
 [node name="vboxDescription" type="VBoxContainer" parent="marginContainer/hboxEnemy"]
 margin_left = 97.0
 margin_right = 469.0
-margin_bottom = 75.0
+margin_bottom = 85.0
 mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.0
@@ -203,12 +203,12 @@ valign = 1
 [node name="vSeparator" type="VSeparator" parent="marginContainer/hboxEnemy/vboxDescription/hBoxContainer"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 173.0
-margin_right = 197.0
+margin_right = 198.0
 margin_bottom = 17.0
 size_flags_horizontal = 3
 
 [node name="skill" type="Label" parent="marginContainer/hboxEnemy/vboxDescription/hBoxContainer"]
-margin_left = 201.0
+margin_left = 202.0
 margin_right = 372.0
 margin_bottom = 17.0
 mouse_filter = 1
@@ -243,59 +243,59 @@ autowrap = true
 [node name="hboxStats" type="HBoxContainer" parent="marginContainer/hboxEnemy/vboxDescription"]
 margin_top = 61.0
 margin_right = 372.0
-margin_bottom = 75.0
+margin_bottom = 85.0
 
 [node name="vSeparator" type="VSeparator" parent="marginContainer/hboxEnemy/vboxDescription/hboxStats"]
 modulate = Color( 1, 1, 1, 0 )
-margin_right = 39.0
-margin_bottom = 14.0
+margin_right = 38.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="descStr" type="Label" parent="marginContainer/hboxEnemy/vboxDescription/hboxStats"]
-margin_left = 43.0
-margin_right = 107.0
-margin_bottom = 14.0
-custom_fonts/font = ExtResource( 2 )
+margin_left = 42.0
+margin_right = 102.0
+margin_bottom = 24.0
 custom_colors/font_color_shadow = Color( 0.69, 0.19, 0.36, 0.66 )
+custom_fonts/font = ExtResource( 2 )
 text = "Attack: 99"
 
 [node name="vSeparator2" type="VSeparator" parent="marginContainer/hboxEnemy/vboxDescription/hboxStats"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 111.0
-margin_right = 150.0
-margin_bottom = 14.0
+margin_left = 106.0
+margin_right = 145.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="descDef" type="Label" parent="marginContainer/hboxEnemy/vboxDescription/hboxStats"]
-margin_left = 154.0
-margin_right = 225.0
-margin_bottom = 14.0
-custom_fonts/font = ExtResource( 2 )
+margin_left = 149.0
+margin_right = 221.0
+margin_bottom = 24.0
 custom_colors/font_color_shadow = Color( 0.29, 0.36, 0.67, 0.66 )
 custom_constants/shadow_as_outline = 0
+custom_fonts/font = ExtResource( 2 )
 text = "Defense: 99"
 
 [node name="vSeparator3" type="VSeparator" parent="marginContainer/hboxEnemy/vboxDescription/hboxStats"]
 modulate = Color( 1, 1, 1, 0 )
-margin_left = 229.0
-margin_right = 268.0
-margin_bottom = 14.0
+margin_left = 225.0
+margin_right = 264.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="descSpd" type="Label" parent="marginContainer/hboxEnemy/vboxDescription/hboxStats"]
-margin_left = 272.0
+margin_left = 268.0
 margin_right = 329.0
-margin_bottom = 14.0
-custom_fonts/font = ExtResource( 2 )
+margin_bottom = 24.0
 custom_colors/font_color_shadow = Color( 0.24, 0.64, 0.44, 0.66 )
 custom_constants/shadow_as_outline = 0
+custom_fonts/font = ExtResource( 2 )
 text = "Speed: 99"
 
 [node name="vSeparator4" type="VSeparator" parent="marginContainer/hboxEnemy/vboxDescription/hboxStats"]
 modulate = Color( 1, 1, 1, 0 )
 margin_left = 333.0
 margin_right = 372.0
-margin_bottom = 14.0
+margin_bottom = 24.0
 size_flags_horizontal = 3
 
 [node name="marginContainer" type="MarginContainer" parent="marginContainer/hboxEnemy"]
@@ -310,7 +310,7 @@ size_flags_stretch_ratio = 7.0
 [node name="btn" type="TextureButton" parent="marginContainer/hboxEnemy"]
 margin_left = 473.0
 margin_right = 566.0
-margin_bottom = 75.0
+margin_bottom = 85.0
 mouse_filter = 1
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 3

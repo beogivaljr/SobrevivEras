@@ -74,8 +74,8 @@ const pigeonDict={
 	Classes.Crusader:
 		{"sprite":"res://resource/sprites/Crusader_Pigeon.png",
 		"portrait":"res://resource/portraits/Crusader_Pigeon_Port.png",
-		'skill':'Pigod VULT',
-		'skillDescription':'Nothing can stop it\'s quest for Pigeoralem'
+		'skill':'Monocultura',
+		'skillDescription':'O agro é popcorn.'
 	},
 	Classes.Egirl:
 		{"sprite":"res://resource/sprites/E-girl_Pigeon.png",
@@ -123,8 +123,8 @@ const pigeonDict={
 	Classes.Knight:
 		{"sprite":"res://resource/sprites/Knight_Pigeon.png",
 		"portrait":"res://resource/portraits/Knight_Pigeon_Port.png",
-		'skill':'Magic wall',
-		'skillDescription':'Adevo grav tera'
+		'skill':'Plantas de Itu',
+		'skillDescription':'As maiores plantas do mundo.'
 	},
 #	Classes.Mimic:
 #		{"sprite":"res://resource/sprites/Mimic_Pigeon.png",
@@ -134,8 +134,8 @@ const pigeonDict={
 	Classes.Normal:
 		{"sprite":"res://resource/sprites/Normal_Pigeon.png",
 		"portrait":"res://resource/portraits/Normal_Pigeon_Port.png",
-		'skill':'City survivor',
-		'skillDescription':'This skill protects the pigeon from critical hits.'
+		'skill':'Vilarejo',
+		'skillDescription':'Vilarejos são protegidos contra ataques críticos.'
 	},
 	Classes.PIgeon:
 		{"sprite":"res://resource/sprites/PIgeon.png",
@@ -158,8 +158,8 @@ const pigeonDict={
 	Classes.Stronga:
 		{"sprite":"res://resource/sprites/Stronga_Pigeon.png",
 		"portrait":"res://resource/portraits/Stronga_Pigeon_Port.png",
-		'skill':'The strongest survives',
-		'skillDescription':'Well, actually the most adaptable survives...'
+		'skill':'Solo BRABO',
+		'skillDescription':'O melhor solo da região'
 	},
 	Classes.Whey:
 		{"sprite":"res://resource/sprites/Whey_Pigeon.png",
@@ -170,14 +170,14 @@ const pigeonDict={
 	Classes.Winged:
 		{"sprite":"res://resource/sprites/Winged_Pigeon.png",
 		"portrait":"res://resource/portraits/Winged_Pigeon_Port.png",
-		'skill':'Winged creature',
-		'skillDescription':'More wings = better flight'
+		'skill':'Só carroças turbinadas',
+		'skillDescription':'Rodas, rodas, rodas, doras, rdas, ordas,.'
 	},
 	Classes.Winged2:
 		{"sprite":"res://resource/sprites/Winged_Pigeon_With_Wings.png",
 		"portrait":"res://resource/portraits/Winged_Pigeon_With_Wings_Port.png",
-		'skill':'Winged wings',
-		'skillDescription':'Wings with wings = even better flight somehow'
+		'skill':'Carga pesada',
+		'skillDescription':'É uma bilada sino!'
 	},
 	Classes.Wizard:
 		{"sprite":"res://resource/sprites/Wizard_Pigeon.png",
@@ -194,8 +194,8 @@ const pigeonDict={
 	Classes.Platy:
 		{"sprite":"res://resource/sprites/Platypigeon.png",
 		"portrait":"res://resource/portraits/Selfie_Pigeon_Port.png",
-		'skill':'Trade of all jacks',
-		'skillDescription':'Master of all jacks too, idk'
+		'skill':'Cidade medíocre',
+		'skillDescription':'Tudo aqui é na média.'
 	},
 }
 
@@ -395,8 +395,11 @@ func _process(_delta):
 #	OS.set_window_title("Pigeon Ascent -- " + String(Engine.get_frames_per_second()) + "FPS")
 func fight(doTween=true):
 	var i=opponents.instance()
-	i.get_node("marginContainer/opponentPanel").doTween=doTween
-	get_tree().root.add_child(i)
+	i.get_node("marginContainer/opponentPanel").doTween=false
+	i.visible = false
+	get_tree().root.call_deferred("add_child", i)
+	yield(i, "ready")
+	i.first_enemy.battle()
 func battle(nextEnemyDict):
 	enemiesForBattle=[]
 	self.enemy=nextEnemyDict

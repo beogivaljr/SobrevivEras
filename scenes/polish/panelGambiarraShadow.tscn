@@ -18,6 +18,9 @@ region_rect = Rect2( 0, 0, 83, 20 )
 margin_right = 310.0
 margin_bottom = 114.0
 custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="panelShadow" type="PanelContainer" parent="."]
 modulate = Color( 0, 0, 0, 0.5 )

@@ -12,4 +12,4 @@ dest_files=[ "res://.import/partyCrasher.ogg-4be74891b48942d7c15f7435e386160c.og
 [params]
 
 loop=true
-loop_offset=10.661
+loop_offset=0
