@@ -347,14 +347,19 @@ margin_right = 289.0
 [node name="hpBox" parent="stats/marginContainer/vbox/vboxBars" index="0"]
 margin_right = 289.0
 
+[node name="strHp" parent="stats/marginContainer/vbox/vboxBars/hpBox" index="1"]
+margin_right = 90.0
+margin_bottom = 27.0
+
 [node name="vbox" parent="stats/marginContainer/vbox/vboxBars/hpBox" index="2"]
+margin_left = 94.0
 margin_right = 253.0
 
 [node name="lifebar" parent="stats/marginContainer/vbox/vboxBars/hpBox/vbox" index="0"]
-margin_right = 144.0
+margin_right = 159.0
 
 [node name="strLife" parent="stats/marginContainer/vbox/vboxBars/hpBox/vbox" index="1"]
-margin_right = 144.0
+margin_right = 159.0
 
 [node name="info" type="TextureRect" parent="stats/marginContainer/vbox/vboxBars/hpBox" index="3"]
 margin_left = 257.0
@@ -363,8 +368,9 @@ margin_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Every attack your pigeon takes lowers their HP.
-At zero, you lose your pigeon!"
+hint_tooltip = "A população te ajudará a sobreviver às intempéries.
+Quanto maior for a população da cidade, mais dano ela 
+será capaz de aguentar."
 mouse_default_cursor_shape = 16
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -377,14 +383,19 @@ __meta__ = {
 [node name="foodBox" parent="stats/marginContainer/vbox/vboxBars" index="1"]
 margin_right = 289.0
 
+[node name="strFood" parent="stats/marginContainer/vbox/vboxBars/foodBox" index="1"]
+margin_right = 62.0
+margin_bottom = 27.0
+
 [node name="vbox" parent="stats/marginContainer/vbox/vboxBars/foodBox" index="2"]
+margin_left = 66.0
 margin_right = 253.0
 
 [node name="foodBar" parent="stats/marginContainer/vbox/vboxBars/foodBox/vbox" index="0"]
-margin_right = 177.0
+margin_right = 187.0
 
 [node name="strFood" parent="stats/marginContainer/vbox/vboxBars/foodBox/vbox" index="1"]
-margin_right = 177.0
+margin_right = 187.0
 
 [node name="info" type="TextureRect" parent="stats/marginContainer/vbox/vboxBars/foodBox" index="3"]
 margin_left = 257.0
@@ -393,11 +404,11 @@ margin_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Each attack uses a bit of food. At zero food, the pigeon:
--Takes only critical hits (except when prevented);
--Their damage is halved;
--Their attack speed is slightly slower.
-If they get even hungrier, more bad things will happen!"
+hint_tooltip = "Com o tempo a comida da cidade acaba, e então:
+-Ela ficará especialmente vulnerável a ataques críticos;
+-Demorará mais tempo para as intempéries passarem;
+Ourtas coisas muito ruins vão acontecer se sua cidade
+ficar faminta!1!1!"
 mouse_default_cursor_shape = 16
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -634,8 +645,11 @@ margin_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Strength makes your pigeon deal more damage,
-and also raises both their HP and FOOD a bit."
+hint_tooltip = "Cuidados de pré-plantio aumentam 
+a quantidade de comida produzida 
+ao final de uma geração.
+Quanto mais comida, mais a população cresce
+ na próxima geração."
 mouse_default_cursor_shape = 16
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -753,9 +767,10 @@ margin_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Defense makes the pigeon take less damage,
-reducing it and blocking part of it.
-It also raises their maximum HP."
+hint_tooltip = "Cuidados no plantio protegem a plantação de sofrer danos 
+das intempéries. Não se defender adequadamente de 
+uma intempérie reduz a comida produzida e a população 
+na próxima geração."
 mouse_default_cursor_shape = 16
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -874,9 +889,9 @@ margin_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 32, 32 )
-hint_tooltip = "Speed makes the pigeon attack faster,
-raises their maximum FOOD,
-and makes their opponents lose FOOD faster as well."
+hint_tooltip = "Investir alocação em logística aumenta o volume de 
+dinheiro produzido ao final de uma geração. Também 
+defende um pouco da perda de comida por intempéries."
 mouse_default_cursor_shape = 16
 size_flags_horizontal = 8
 size_flags_vertical = 0
