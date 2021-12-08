@@ -24,6 +24,7 @@ script/source = "#		LV1		2W 1M
 
 extends PanelContainer
 
+var first_enemy = null
 var enemyPanel=preload(\"res://scenes/opponentModel.tscn\")
 var targetPos=0
 var doTween=true
@@ -154,6 +155,7 @@ func addSameEnemies():
 		i.enemyClass=e[\"class\"]
 		distributePoints(i,0,[e.strength,e.defense,e.speed])
 		$marginContainer/vbox/vboxOpponents.add_child(i)
+		first_enemy = i
 		
 func reroll():
 #	print_debug(\"asdasd\")
@@ -388,12 +390,12 @@ margin_right = 360.0
 margin_bottom = 426.0
 mouse_default_cursor_shape = 2
 size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
 custom_styles/hover = ExtResource( 7 )
 custom_styles/pressed = ExtResource( 6 )
 custom_styles/focus = ExtResource( 7 )
 custom_styles/disabled = ExtResource( 5 )
 custom_styles/normal = ExtResource( 5 )
-custom_fonts/font = ExtResource( 4 )
 text = "     REROLL     "
 script = SubResource( 3 )
 

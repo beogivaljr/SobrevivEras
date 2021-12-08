@@ -395,8 +395,11 @@ func _process(_delta):
 #	OS.set_window_title("Pigeon Ascent -- " + String(Engine.get_frames_per_second()) + "FPS")
 func fight(doTween=true):
 	var i=opponents.instance()
-	i.get_node("marginContainer/opponentPanel").doTween=doTween
-	get_tree().root.add_child(i)
+	i.get_node("marginContainer/opponentPanel").doTween=false
+	i.visible = false
+	get_tree().root.call_deferred("add_child", i)
+	yield(i, "ready")
+	i.first_enemy.battle()
 func battle(nextEnemyDict):
 	enemiesForBattle=[]
 	self.enemy=nextEnemyDict

@@ -38,15 +38,15 @@ stretch_mode = 2
 script = SubResource( 1 )
 
 [node name="vbox" type="VBoxContainer" parent="."]
-margin_left = 17.0
+margin_left = 4.0
 margin_top = 4.0
-margin_right = 295.0
+margin_right = 312.0
 margin_bottom = 89.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="btnFight" type="TextureButton" parent="vbox"]
-margin_right = 278.0
+margin_right = 308.0
 margin_bottom = 85.0
 rect_min_size = Vector2( 90, 30 )
 mouse_default_cursor_shape = 2
