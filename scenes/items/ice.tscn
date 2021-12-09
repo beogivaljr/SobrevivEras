@@ -12,9 +12,9 @@ region_rect = Rect2( 0, 0, 83, 20 )
 [sub_resource type="GDScript" id=2]
 script/source = "extends PanelContainer
 
-export(String) var itemName=\"Ice\"
+export(String) var itemName=\"Inseticida\"
 export(int) var itemPrice=1000
-export(String) var itemDescription=\"A strange ice cube. Only the highest DEFENSE might make it useful.\"#\"A strange ice cube. It ressonates when near a high DEFENSE.\"
+export(String) var itemDescription=\"Torna o seu plantio imbatível contra os insetos, contra os insetos.\"#\"A strange ice cube. It ressonates when near a high DEFENSE.\"
 export(bool) var unique=true
 export(bool) var clickable=false
 

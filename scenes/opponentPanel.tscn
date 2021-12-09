@@ -79,7 +79,6 @@ func distributePoints(obj,numberOfPoints,addedPoints=[0,0,0]):
 func createEnemy(level,handicap=0,boss=false):
 	randomize()
 	var i=enemyPanel.instance()
-	i.enemyName=selectName()
 	i.enemyLevel=level
 	var points=(level*3)-handicap
 #	print_debug(points)
@@ -130,12 +129,37 @@ func createEnemy(level,handicap=0,boss=false):
 	elif level in [10] and boss:
 		points+=3
 		addedPoints+=[2,2,2]
-		i.enemyName=\"Pigod\"
+		i.enemyName=\"FIM DO SOL\"
 		i.enemyLevel=\"???\"
 		i.enemyGold=9999
 		i.enemyClass=global.Classes.GodPigeon
 	distributePoints(i,points,addedPoints)
 	i.enemyGold=100+120*(level-handicap)#100+200*(level-handicap)
+	if i.enemyClass == global.Classes.GodPigeon:
+		return i
+	if i.enemyStr >= i.enemyDef and i.enemyStr >= i.enemySpd:
+		if [1, 2, 3, 4, 5].has(i.enemyLevel):
+			i.enemyName = \"Erupção Vulcânica\"
+		elif [6, 7].has(i.enemyLevel):
+			i.enemyName = \"Tsunâmi\"
+		else:
+			i.enemyName = \"Explosão Solar\"
+	elif i.enemyDef >= i.enemyStr and i.enemyDef >= i.enemySpd:
+		if [1, 2, 3, 4, 5].has(i.enemyLevel):
+			i.enemyName = \"Geada\"
+		elif [6, 7].has(i.enemyLevel):
+			i.enemyName = \"Aquecimento Global\"
+		else:
+			i.enemyName = \"Eclipse\"
+	elif i.enemySpd >= i.enemyStr and i.enemySpd >= i.enemyDef:
+		if [1, 2, 3, 4, 5].has(i.enemyLevel):
+			i.enemyName = \"Nuvem de Gafanhotos\"
+		elif [6, 7].has(i.enemyLevel):
+			i.enemyName = \"Nuvem de Drones\"
+		else:
+			i.enemyName = \"Invasão Alien\"
+	else:
+		i.enemyName = \"Intempérie desconhecida\"
 	return i
 
 func addEnemies(enemyArray=[]):
@@ -155,6 +179,9 @@ func addSameEnemies():
 		i.enemyClass=e[\"class\"]
 		distributePoints(i,0,[e.strength,e.defense,e.speed])
 		$marginContainer/vbox/vboxOpponents.add_child(i)
+#		if not first_enemy:
+#			first_enemy = i 
+#		elif i.enemyLevel <= first_enemy.enemyLevel:
 		first_enemy = i
 		
 func reroll():

@@ -23,8 +23,8 @@ margin_left = -38.4138
 margin_top = -40.0395
 margin_right = 59.5862
 margin_bottom = 41.9605
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "13"
 __meta__ = {
 "_edit_use_anchors_": false

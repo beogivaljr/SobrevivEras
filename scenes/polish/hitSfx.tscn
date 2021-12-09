@@ -15,11 +15,13 @@ var sampleList=[
 func _ready():
 	self.pitch_scale=rand_range(0.9,1.1)
 	self.stream=load(sampleList[randi()%sampleList.size()])
-	var _s1=self.connect(\"finished\",self,\"killMe\")
+#	var _s1=self.connect(\"finished\",self,\"killMe\")
 	self.playing=true
-func killMe():
-	yield(get_tree().create_timer(2.0),\"timeout\")
-	self.queue_free()
+	yield(self, \"finished\")
+	call_deferred(\"queue_free\")
+#func killMe():
+#	yield(get_tree().create_timer(2.0),\"timeout\")
+#	self.queue_free()
 "
 
 [node name="hitSfx" type="AudioStreamPlayer"]

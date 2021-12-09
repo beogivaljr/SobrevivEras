@@ -18,3 +18,5 @@ func changeTexture():
 		or global.player["class"] == global.Classes.Hatoshi
 	):
 		self.get_stylebox("panel").bg_color = Color("55847c")
+	else:
+		self.get_stylebox("panel").bg_color = Color("1b7634")

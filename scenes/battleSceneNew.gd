@@ -184,7 +184,7 @@ func attack(myself=global.player,target=global.enemy,_sprMyself=playerSpr,sprTar
 			self.iEnemyHpLoss+=1
 			iMyselfHpLoss=self.iEnemyHpLoss
 	if iMyselfHpLoss>=1:
-		registerSameTurn(is_city, "\n\n" + bbName + " takes " + str(iMyselfHpLoss) + " damage from being hungry...", Color.yellow)
+		registerSameTurn(is_city, "\n\nMorreram " + str(iMyselfHpLoss) + " habitantes por fome extrema...", Color.yellow)
 		myself.hp-=int(iMyselfHpLoss)
 		if myself.hp<=0:
 			exitButton.rect_global_position.y=OS.window_size.y*1.2
@@ -195,18 +195,18 @@ func attack(myself=global.player,target=global.enemy,_sprMyself=playerSpr,sprTar
 	# Finally, attack stuff
 	if dodged:
 		createDamageNumbers(enemySpr.global_position,1,"Miss", is_city, false,strOrigin)
-		register(is_city, bbName + " misses an attack!")
+		register(is_city, bbName + " não causou nenhum dano!")
 	else:
 		if bIsCritical:
 			damage = max(int(2*damage),1)
-			registerFast(is_city, "[shake rate=20 level=10]A CRITICAL HIT![/shake]", Color.green if strOrigin=="Player" else Color.red)
+			registerFast(is_city, "[shake rate=20 level=10]ATAQUE CRÍTICO![/shake]", Color.green if strOrigin=="Player" else Color.red)
 			if foodDamage>0:
-				registerSameTurnNoLineBreak(is_city, bbName + " attacks for " +String(damage)+ " damage")
-				registerSameTurn(is_city, "and " +String(foodDamage)+ " food damage")
+				registerSameTurnNoLineBreak(is_city, bbName + " matou " +String(damage)+ "mil habitantes")
+				registerSameTurn(is_city, "e destruiu " +String(foodDamage)+ "Ton de comida")
 				if not is_city:
 					turn+=1
 			else:
-				registerSameTurn(is_city, bbName + " attacks for " +String(damage)+ " damage")
+				registerSameTurn(is_city, bbName + " matou " +String(damage)+ "mil habitantes")
 				if not is_city:
 					turn+=1
 			shakeHpBar(strOrigin)
@@ -215,15 +215,15 @@ func attack(myself=global.player,target=global.enemy,_sprMyself=playerSpr,sprTar
 			#damage*=1.0 if myself.energy>0 else 0.5
 			#damage = int(max(damage*damageModifier,1))
 			damage = max(int(damage),1)
-			register(is_city, bbName + " attacks for " +String(damage)+ " damage")
-			if foodDamage>0:registerSameTurnNoLineBreak(is_city, "and " +String(foodDamage)+ " food damage")
+			register(is_city, bbName + " matou " +String(damage)+ "mil habitantes")
+			if foodDamage>0:registerSameTurnNoLineBreak(is_city, "e destruiu " +String(foodDamage)+ "Ton de comida")
 			shakeHpBar(strOrigin)
 			sprTarget.hit()
 			
 		if doubleStrike:
 			target.hp-=int(damage*0.66)
 			createDamageNumbers(sprTarget.global_position+Vector2(16,-16),1,damage/2, is_city, isCritical,strOrigin)
-			registerSameTurn(is_city, "and also attacks again for "+str(int(damage/2))+" damage!")
+			registerSameTurn(is_city, "e também matou mais "+str(int(damage/2))+"mil habitantes!")
 		target.hp-=int(damage)
 		target.energy-=int(foodDamage)
 		createDamageNumbers(sprTarget.global_position, 1 if strOrigin=='Player' else -1, damage, is_city, isCritical,strOrigin)

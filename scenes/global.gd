@@ -51,6 +51,7 @@ enum Classes{
 	Platy,
 }
 var nCurrentMusic:AudioStreamPlayer
+var current_volume: float
 #const pigeonClassesAndSprites={
 const pigeonDict={
 	Classes.Baker:
@@ -164,8 +165,8 @@ const pigeonDict={
 	Classes.Whey:
 		{"sprite":"res://resource/sprites/Whey_Pigeon.png",
 		"portrait":"res://resource/portraits/Whey_Pigeon_Port.png",
-		'skill':'BIRL',
-		'skillDescription':'Be strong IRL too'
+		'skill':'Estufas',
+		'skillDescription':'Aqui até as plantas moram e apartamento'
 	},
 	Classes.Winged:
 		{"sprite":"res://resource/sprites/Winged_Pigeon.png",
@@ -317,6 +318,7 @@ func secondEvolution():
 	elif self.player["class"]==self.Classes.Winged:
 		self.player["class"]=self.Classes.Hatoshi if self.hasSword else self.Classes.Winged2
 	emit_signal("PlayerEvolved")
+	add_child(musicEvolution.instance())
 var hoverSfx=preload("res://scenes/polish/hoverSfx.tscn")
 var selectSfx=preload("res://scenes/polish/selectSfx.tscn")
 var clickUnableSfx=preload("res://scenes/polish/clickUnableSfx.tscn")
@@ -374,16 +376,19 @@ var muted=false
 func addMusicPartyCrasher():
 	var i:=musicPartyCrasher.instance()
 	i.name='music'
+	current_volume = i.volume_db
 	self.nCurrentMusic=i
 	add_child(i)
 func addMusicFireSword():
 	var i:=musicFireSword.instance()
 	i.name='music'
+	current_volume = i.volume_db
 	self.nCurrentMusic=i
 	add_child(i)
 func addMusicLastOpponent():
 	var i:=musicFinalBoss.instance()
 	i.name='music'
+	current_volume = i.volume_db
 	self.nCurrentMusic=i
 	add_child(i)
 func _process(_delta):
@@ -393,7 +398,7 @@ func _process(_delta):
 		muted=!muted
 		AudioServer.set_bus_mute(0,muted)
 #	OS.set_window_title("Pigeon Ascent -- " + String(Engine.get_frames_per_second()) + "FPS")
-func fight(doTween=true):
+func fight(_doTween=true):
 	var i=opponents.instance()
 	i.get_node("marginContainer/opponentPanel").doTween=false
 	i.visible = false
@@ -418,7 +423,7 @@ func fadeMusicAway():
 	if OS.has_feature("standalone"):
 		var t:=Tween.new()
 		add_child(t)
-		var _v1=t.interpolate_property(self.nCurrentMusic,'volume_db',self.nCurrentMusic.volume_db,-100,4.0,Tween.TRANS_QUINT,Tween.EASE_IN)
+		var _v1=t.interpolate_property(self.nCurrentMusic,'volume_db',self.nCurrentMusic.volume_db,-100,current_volume,Tween.TRANS_QUINT,Tween.EASE_IN)
 		var _v2=t.start()
 		yield(t,"tween_all_completed")
 		self.nCurrentMusic.queue_free()
@@ -426,16 +431,16 @@ func fadeMusicAway():
 func incrementLevel():
 	print_debug('Level: '+str(self.level))
 	self.level+=1
-	if self.level==5:
-		var t:=Tween.new()
-		add_child(t)
-		var _v1=t.interpolate_property(self.nCurrentMusic,'volume_db',self.nCurrentMusic.volume_db,-100,4.0,Tween.TRANS_QUINT,Tween.EASE_IN)
-		var _v2=t.start()
-		yield(t,"tween_all_completed")
-		self.nCurrentMusic.queue_free()
-		t.queue_free()
-		addMusicFireSword()
-	elif self.level==10:
+#	if self.level==5:
+#		var t:=Tween.new()
+#		add_child(t)
+#		var _v1=t.interpolate_property(self.nCurrentMusic,'volume_db',self.nCurrentMusic.volume_db,-100,4.0,Tween.TRANS_QUINT,Tween.EASE_IN)
+#		var _v2=t.start()
+#		yield(t,"tween_all_completed")
+#		self.nCurrentMusic.queue_free()
+#		t.queue_free()
+#		addMusicFireSword()
+	if self.level==10:
 		var t:=Tween.new()
 		add_child(t)
 		var _v1=t.interpolate_property(self.nCurrentMusic,'volume_db',self.nCurrentMusic.volume_db,-100,4.0,Tween.TRANS_QUINT,Tween.EASE_IN)
@@ -447,7 +452,7 @@ func incrementLevel():
 	elif self.level==11:
 		var t:=Tween.new()
 		add_child(t)
-		var _v1=t.interpolate_property(self.nCurrentMusic,'volume_db',self.nCurrentMusic.volume_db,-100,4.0,Tween.TRANS_QUINT,Tween.EASE_IN)
+		var _v1=t.interpolate_property(self.nCurrentMusic,'volume_db',self.nCurrentMusic.volume_db,-100,1,Tween.TRANS_QUINT,Tween.EASE_IN)
 		var _v2=t.start()
 		yield(t,"tween_all_completed")
 		self.nCurrentMusic.queue_free()

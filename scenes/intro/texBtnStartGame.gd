@@ -17,5 +17,8 @@ func _ready():
 	var _s2=self.connect("mouse_entered",global,"createHoverSfx")
 func startGame():
 	global.player.name=get_parent().get_node("lineEdit").text
+	if global.nCurrentMusic and is_instance_valid(global.nCurrentMusic) and not global.nCurrentMusic.is_queued_for_deletion():
+		global.nCurrentMusic.queue_free()
+		global.nCurrentMusic = null
 	global.addMusicPartyCrasher()
 	var _sc1=get_tree().change_scene("res://scenes/root.tscn")

@@ -27,7 +27,7 @@ var vboxLeft=preload(\"res://scenes/vboxRootL.tscn\")
 var vboxRight=preload(\"res://scenes/vboxRootR.tscn\")
 var state=\"centerScreen\"
 func _ready():
-	$twnEnter.connect(\"tween_completed\",self,\"checkForDeletion\")
+	var _foo = $twnEnter.connect(\"tween_completed\",self,\"checkForDeletion\")
 	set_process(true)
 func _process(_delta):
 	if state==\"centerScreen\":

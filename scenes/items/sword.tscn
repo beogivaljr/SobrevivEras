@@ -12,9 +12,9 @@ region_rect = Rect2( 0, 0, 83, 20 )
 [sub_resource type="GDScript" id=2]
 script/source = "extends PanelContainer
 
-export(String) var itemName=\"Sword\"
+export(String) var itemName=\"Armazenamento\"
 export(int) var itemPrice=1000
-export(String) var itemDescription=\"A mysterious sword... you might be able to use it with the greatest SPEED.\"#\"A mysterious sword... you might be able to use it with enough SPEED.\"
+export(String) var itemDescription=\"Nada mais logístico do que bons estoques.\"#\"A mysterious sword... you might be able to use it with enough SPEED.\"
 export(bool) var unique=true
 export(bool) var clickable=false
 
@@ -30,7 +30,7 @@ func appear()->void:
 
 func _ready():
 	self.visible=false
-	global.connect(\"PlayerEvolvedSpd\",self,'appear')
+	var _foo = global.connect(\"PlayerEvolvedSpd\",self,'appear')
 	$marginContainer/hboxItem/label.text=self.itemName
 	self.rect_pivot_offset=self.rect_size/2
 #	self.rect_scale=0.9*Vector2(1,1)
